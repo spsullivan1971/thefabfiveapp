@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Demo Auth In Angular</title>
+  <title>Bars and Stripes</title>
   <link href="favicon.png" rel="shortcut icon">
   <link href="//fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -27,6 +27,10 @@
 
   <div ng-view class="fadeZoom"></div>
 
+
+  <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+
+
   <!-- bower:js -->
   <script src="vendor/angular/angular.js"></script>
   <script src="vendor/angular-animate/angular-animate.js"></script>
@@ -36,6 +40,8 @@
   <script src="vendor/angular-strap/dist/angular-strap.tpl.js"></script>
   <script src="vendor/satellizer/satellizer.js"></script>
   <script src="vendor/angular-sanitize/angular-sanitize.js"></script>
+  <script src="vendor/lodash/lodash.js"></script>
+  <script src="vendor/angular-google-maps/dist/angular-google-maps.js"></script>
   <!-- endbower -->
 
 
@@ -44,6 +50,9 @@
   <script src="auth/auth.module.js"></script>
   <script src="auth/directives/passwordStrength.js"></script>
   <script src="auth/directives/passwordMatch.js"></script>
+  <script src="favorites/favorites.module.js"></script>
+  <script src="favorites/favorites.service.js"></script>
+  <script src="favorites/favorites.controller.js"></script>
   <script src="profile/profile.module.js"></script>
   <script src="profile/profile.controller.js"></script>
   <script src="profile/profile.accountService.js"></script>
@@ -55,9 +64,6 @@
   <script src="places/places.controller.js"></script>
   <script src="app.module.js"></script>
   <script src="home/navbar.js"></script>
-  <script src="favorites/favorites.module.js"></script>
-  <script src="favorites/favorites.service.js"></script>
-  <script src="favorites/favorites.controller.js"></script>
   <script src="controllers/navbar.js"></script>
   <script src="auth/auth.signup.js"></script>
   <script src="auth/auth.logout.js"></script>

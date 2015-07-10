@@ -292,3 +292,5 @@ a {
             transform: scale3d(0.8, 0.8, 0.8); }
   50% {
     opacity: 1; } }
+.angular-google-map-container {
+  height: 400px; }

@@ -3,9 +3,8 @@
 
 
 angular.module('places')
-  .controller('ProfileController', function($scope, $auth, $alert, Account) {
-
-
+  .controller('PlacesController', function($scope, $auth, $alert, Account) {
+    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
   });
 })();

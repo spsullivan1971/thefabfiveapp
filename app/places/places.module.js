@@ -1,7 +1,9 @@
 (function () {
   'use strict';
 angular.module('places', [
-  'ngRoute'
+  'ngRoute',
+  'uiGmapgoogle-maps'
+
 
 ])
 
