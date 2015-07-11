@@ -165,10 +165,6 @@ function startBrowserSync() {
   };
 
   setTimeout(function() {
-    browserSync(options)
-<<<<<<< HEAD
-  }, 100);
-=======
-  }, 500);
->>>>>>> 1c21a79ceef7c391eec2389ae5dbc43d76505fe1
+    browserSync(options);
+}, 100);
 }
