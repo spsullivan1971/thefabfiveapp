@@ -3,43 +3,109 @@ $white: #FFFFFF;
 $lightBlue: #C8D3E6;
 $mediumBlue: #657FAD;
 $darkBlue: #002566;
-$text: #666666;
+$text: #333333;
 $border: #a3a3a3;
 
+@font-face {
+    font-family: ScriptFont;
+    src: url('../fonts/Freebooter-Script/freebooterscript.ttf');
+}
+@font-face {
+    font-family: BoldFont;
+    src: url('../fonts/aleo/Aleo-Bold.otf');
+}
+
 @import "partials/auth";
+<<<<<<< HEAD
 @import "partials/loginPage";
+=======
+@import "partials/header";
+
+@mixin submitButton {
+    background-color: $red;
+    font-size: 3vmax;
+    color: $white;
+    border: 3px solid $border;
+    font-family: ScriptFont;
+    border-radius: 5px;
+    &:hover{
+      border-color: $darkBlue;
+      background-color: $white;
+      color: $red;
+      transition: ease .3s;
+    }
+  }
+
+html {
+  /* background:  linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('../Images/American-Flag-in-the-Sun.jpg') no-repeat no-repeat;
+  background-size: 100% 800px;
+  position: fixed;
+  width: 100%; */
+}
+
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  background: $darkBlue;
+  color: $text;
+  background:  linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('../Images/American-Flag-in-the-Sun.jpg') no-repeat no-repeat;
+  background-size: 100% 800px;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+  font-family: BoldFont;
 }
 
 a {
-  color: #000;
+  /* color: #000; */
 }
 
 .text-muted {
-  color: $text;
+  color: $white;
 }
 
 .navbar {
   border: 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+  font-size: 2vmax;
+  background-color: $red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: ScriptFont;
 }
 
 .navbar-header {
-  float: left;
   padding-left: 15px;
+  background-color: $darkBlue;
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $red;
+  font-size: 2vmax;
+  color: $white;
+  font-family: ScriptFont;
+
 }
 
 .navbar-nav {
   float: left;
   margin: 0;
+  display: flex;
+  align-items: center;
+  background-color: $red;
+
+
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: $text;
+    &:hover {
+      color: $white;
+      transition: ease .25s;
+    }
 }
 
 .navbar-nav > li {
@@ -47,17 +113,17 @@ a {
 }
 
 .navbar-nav > li > a {
-  padding: 15px;
+  /* padding: 15px; */
+  color: $text;
 }
 
 .navbar-default {
   color: $text;
-  background: #fff;
 }
 
 .navbar-default .navbar-brand {
-  color: $white;
-  background-color: $red;
+  color: $text;
+  margin: 3%;
 }
 
 .navbar-default .navbar-brand:hover {
@@ -65,9 +131,26 @@ a {
   background-color: #fff;
 }
 
-.navbar-brand {
-  margin-left: -15px;
-  transition: 0.25s all;
+.brandWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  width: 100%;
+  height: 80%;
+  border-radius: 2px;
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -15px;
+    transition: 0.25s all;
+    float: none;
+    padding: 0;
+    font-size: 2vmax;
+    width:100%;
+    height: 100%;
+  }
 }
 
 .panel {
@@ -173,15 +256,15 @@ a {
 .btn {
   font-weight: bold;
   border-radius: 2px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+  /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26); */
 }
 
 .btn-primary {
-  background-color: #4285f4;
+  /* background-color: #4285f4; */
 }
 
 .btn-primary:hover {
-  background-color: #3367d6;
+  /* background-color: #3367d6; */
 }
 
 .btn-success {
@@ -226,6 +309,224 @@ a {
 
 .btn .fa {
   margin-right: 5px;
+}
+
+/*********************
+  * places page
+  *********************/
+
+  .individualPlaceList {
+    background-color: white;
+    border: 2px solid;
+    border-color: #AC0000;
+    width: 1420px;
+    border-style: groove;
+    border-radius: 5px;
+    margin-left: -140px;
+    margin-top: 10px;
+  }
+
+  .info {
+    margin-top: -140px;
+    margin-left: 200px;
+  }
+
+  .details {
+    float: right;
+    margin-right: 100px;
+    vertical-align: text-bottom;
+    width: 100px;
+    height: 50px;
+    color: white;
+    background-color: #AC0000;
+    transition: .5s;
+    border-radius: 5px;
+  }
+
+  .details:hover {
+    color: #AC0000;
+    background-color: white;
+    transition: .4s;
+    border: none;
+  }
+
+  .address, .rating {
+    color: #002566;
+    display: inline-block;
+    font-size: 30px;
+    margin-left: 50px;
+    margin-bottom: 100px;
+  }
+
+  .addToFavorites {
+    color: #002566;
+    margin-left: 55px;
+    font-size: 20px;
+    display: block;
+  }
+
+  .addToFavorites:hover {
+    text-decoration: none;
+    color: #AC0000;
+  }
+
+  .placeContainer {
+    margin-left: 20px;
+  }
+
+  .placeContainer img {
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+  }
+
+  .individualPlace {
+    text-align: center;
+    color: #002566;
+    font-size: 30px;
+    margin-left: 20px;
+  }
+
+/*********************
+* Details page
+*********************/
+
+.individualPlaceDetails {
+  background-color: white;
+  border: 2px solid;
+  border-color: #AC0000;
+  width: 1420px;
+  border-style: groove;
+  border-radius: 5px;
+  margin-left: -140px;
+  margin-top: 10px;
+}
+
+.placeDetailContainer {
+  margin-left: 20px;
+}
+
+.placeDetailContainer img {
+  height: 400px;
+  width: 400px;
+  border-radius: 5px;
+}
+
+.detailsAddress, .detailsContact, .detailsHoursOfOperation, .detailsHappyHours {
+  color: #002566;
+}
+
+.individualPlaceDetailTitle {
+  color: #002566;
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.detailsRating {
+  font-size: 25px;
+  margin-left: 150px;
+  color: #002566;
+}
+
+.addToDetailsFavorites {
+  color: #002566;
+  font-size: 25px;
+  margin-left: 135px;
+}
+
+.addToDetailsFavorites:hover{
+  text-decoration: none;
+  color: #AC0000;
+}
+
+.detailsInfo {
+  margin-top: -400px;
+  margin-left: 200px;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.detailsWebsiteLink {
+  color: #002566;
+}
+
+.detailsWebsiteLink:hover {
+  text-decoration: none;
+  color: #AC0000;
+}
+
+.backToPlaces {
+  float: right;
+  margin-right: 100px;
+  margin-top: 20px;
+  vertical-align: text-bottom;
+  width: 100px;
+  height: 50px;
+  color: white;
+  background-color: #AC0000;
+  transition: .5s;
+  border-radius: 5px;
+}
+
+.backToPlaces:hover {
+  color: #AC0000;
+  background-color: white;
+  transition: .4s;
+  border: none;
+}
+
+/*********************
+* Reviews Section
+*********************/
+
+.reviewsContainer {
+  border-top: 2px solid;
+  border-color: #AC0000;
+  width: 1420px;
+  border-style: groove;
+  margin-left: -140px;
+  margin-top: 10px;
+}
+
+.individualReview {
+  background-color: white;
+  border: 2px solid;
+  border-color: #AC0000;
+  border-style: groove;
+  border-radius: 5px;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.allReviews, .barsReviews {
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.reviews {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+textarea {
+  resize: none;
+  border-radius: 5px;
+  border-color: #AC0000;
+  margin-top: 10px;
+}
+
+.submit {
+  border-radius: 5px;
+  border-color: #AC0000;
+  background-color: white;
+  color: #002566;
+  width: 50px;
 }
 
 /*********************

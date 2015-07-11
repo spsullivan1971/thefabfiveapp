@@ -1,0 +1,18 @@
+.beerpin {
+  width: 70px;
+  height: 70px;
+  float: left;
+}
+
+#signUpWrapper {
+  justify-content: flex-end;
+  width: 30%;
+  color: $text;
+}
+
+#headerLinks {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}

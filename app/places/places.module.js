@@ -4,13 +4,12 @@ angular.module('places', [
   'ngRoute',
   'uiGmapgoogle-maps'
 
-
 ])
 
 .config(function($routeProvider) {
   $routeProvider
     .when('/places', {
-      templateUrl: 'places/views/list.html',
+      templateUrl: 'places/views/location.html',
       controller: 'PlacesController'
     })
     .when('/places/:placeId', {

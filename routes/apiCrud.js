@@ -3,6 +3,7 @@ var express = require('express');
 var mongoskin = require('mongoskin'); // TODO: use one ORM, not mongoose and mongoskin
 var router = express.Router();
 var config = require('../config');
+var request = require('request');
 var db = mongoskin.db(config.MONGO_URI, {
   safe: true
 });
@@ -24,6 +25,18 @@ router.param('collectionName', function(req, res, next, collectionName) {
 // Thanks to http://webapplog.com/tutorial-node-js-and-mongodb-json-rest-api-server-with-mongoskin-and-express-js/
 
 // GET /collections/:collectionName
+router.route('/placesProxy')
+  .post(function (req, res, next) {
+
+    request(req.body.url, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        console.log(body) // Show the HTML for the Google homepage.
+        res.json({yay: "it works", data: body});
+      }
+    });
+
+});
+
 router.route('/:collectionName')
   .get(function(req, res, next) {
     req.collection.find({}, {

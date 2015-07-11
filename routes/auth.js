@@ -97,6 +97,7 @@ router.route('/login')
 
         // Step 3a. Link user accounts.
         if (req.headers.authorization) {
+          console.log('profile.sub',profile.sub);
           User.findOne({ google: profile.sub }, function(err, existingUser) {
             if (existingUser) {
               return res.status(409).send({ message: 'There is already a Google account that belongs to you' });
