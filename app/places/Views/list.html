@@ -10,67 +10,29 @@
 </ui-gmap-google-map>
 
 
-<div class="container">
+<div class="contain">
   <!-- <input ng-model="searchAny" class="searchBox" placeholder="Search">
     <div ng-repeat="filter:searchAny">
     </div> -->
-  <div class="places">
+<!--   <div class="places"> -->
   <article class="place" ng-repeat="place in places" data-id="{{place.id}}">
       <div class="individualPlaceList">
-          <a class="individualPlace" href="#/places/detail/{{place.id}}">{{place.name}}</a>
+
         <div class="placeContainer">
             <img ng-src="http://baystreetbiergarten.com/wp-content/themes/baystreetbiergarten/-/img/logo.png" alt="" />
             <a href="#/favorites" class="addToFavorites" ng-click="addPlace(place)">Add to &#9825</a>
         </div>
         <div class="info">
-          <div class="address">{{place.address}}</div>
-          <div class="rating">&#10025 3.4</div>
+          <a class="individualPlace" href="#/places/{{place.id}}">{{place.name}}</a>
+          <div class="address">{{place.address}}</div><br>
+          <div class="rating">&#10025 {{place.rating}}</div><br>
           <a href="#/places/{{place.id}}"><button class="details">Details</button></a>
         </div>
             <!-- <div class="favorites" ng-controller="FavoritesController"> -->
             <!-- </div> -->
       </div>
-      <!-- <div class="individualPlaceList">
-          <a class="individualPlace" href="#/places/detail">Tattooed Moose</a>
-        <div class="placeContainer">
-            <img ng-src="https://pbs.twimg.com/profile_images/514429058604486657/1U5sZlNH.jpeg" alt="" />
-            <a href="#/favorites" class="addToFavorites" ng-click="addPlace(place)">Add to &#9825</a>
-        <div class="info">
-          <div class="address">Address: 1137 Morrison Dr, Charleston, SC 29403</div>
-          <div class="rating">&#10025 4.5</div>
-          <a href="#/places/detail"><button class="details" ng-click="details">Details</button></a>
-        </div>
-            <div class="favorites" ng-controller="FavoritesController">
-            </div>
-        </div>
-      </div>
-      <div class="individualPlaceList">
-          <a class="individualPlace" href="#/places/detail">Mynt</a>
-        <div class="placeContainer">
-            <img ng-src="https://pbs.twimg.com/profile_images/515549462677032960/3bCNxxXa.jpeg" alt="" />
-            <a href="#/favorites" class="addToFavorites" ng-click="addPlace(place)">Add to &#9825</a>
-        <div class="info">
-          <div class="address">Address: 135 Calhoun St, Charleston, SC 29401</div>
-          <div class="rating">&#10025 4.2</div>
-          <a href="#/places/detail"><button class="details" ng-click="details">Details</button></a>
-        </div>
-            <div class="favorites" ng-controller="FavoritesController">
-            </div>
-        </div>
-      </div>
-      <div class="individualPlaceList">
-          <a class="individualPlace" href="#/places/detail">Biergarten</a>
-        <div class="placeContainer">
-            <img ng-src="http://baystreetbiergarten.com/wp-content/themes/baystreetbiergarten/-/img/logo.png" alt="" />
-            <a href="#/favorites" class="addToFavorites" ng-click="addPlace(place)">Add to &#9825</a>
-        <div class="info">
-          <div class="address">Address: 549 E Bay St, Charleston, SC 29403</div>
-          <div class="rating">&#10025 3.4</div>
-          <a href="#/places/detail"><button class="details" ng-click="details">Details</button></a>
-        </div>
-            <div class="favorites" ng-controller="FavoritesController">
-            </div> -->
-        </div>
+
+    <!--     </div> -->
       </div>
     </article>
   </div>

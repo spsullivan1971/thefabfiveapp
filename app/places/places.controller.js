@@ -1,5 +1,8 @@
+var lat;
+var long;
+
 (function() {
-    'use strict';
+    // 'use strict';
 
 
 angular.module('places')
@@ -33,22 +36,17 @@ angular.module('places')
     var events = {
         places_changed: function (searchBox) {
             var place = searchBox.getPlaces();
-            var lat = place[0].geometry.location.lat();
-            var long = place[0].geometry.location.lng();
+            lat = place[0].geometry.location.lat();
+            long = place[0].geometry.location.lng();
             if (!place || place == 'undefined' || place.length == 0) {
                 console.log('no place data :(');
                 return;
             }
+
             PlaceService.getBars(lat, long).then(function(data) {
               $scope.places = data;
 
             });
-            if($routeParams.placeId) {
-              PlaceService.getSingleBar($routeParams.placeId).then(function(listing) {
-              // console.log(listing);
-              // $scope.place = listing;
-              });
-            }
 
             $scope.map = {
                 "center": {
@@ -67,6 +65,14 @@ angular.module('places')
 
         }
     };
+    if($routeParams.placeId) {
+      console.log("i am in routeparams");
+    PlaceService.getSingleBar($routeParams.placeId, lat, long).then(function(listing) {
+      console.log(listing);
+      $scope.place = listing;
+
+    });
+    }
     $scope.searchbox = { template: 'searchbox.tpl.html', events: events };
 
 

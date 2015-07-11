@@ -1,18 +1,18 @@
-<div class=container>
+<div class=contain ng-controller="PlacesController">
   <div class="individualPlaceDetails">
       <a href="#/places"><button class="backToPlaces" ng-click="back">Back</button></a>
     <div class="placeDetailContainer">
-        <p class="individualPlaceDetailTitle">Biergarten</p>
         <img ng-src="http://baystreetbiergarten.com/wp-content/themes/baystreetbiergarten/-/img/logo.png" alt="" />
-        <div class="detailsRating">&#10025 3.4</div>
+        <div class="detailsRating">&#10025 {{place.rating}}</div>
         <a href="#/favorites" class="addToDetailsFavorites" ng-click="addPlace(place)">Add to &#9825</a>
     </div>
     <div class="detailsInfo">
-        <div class="detailsAddress">Address: 549 E Bay St, Charleston, SC 29403</div>
-        <div class="detailsContact">Phone: (843) 266-2437</div>
-        <div class="detailsHoursOfOperation">Hours: 11:00 am – 2:00 am</div>
+      <p class="individualPlaceDetailTitle">{{place.name}}</p>
+        <div class="detailsAddress">{{place.address}}</div>
+        <div class="detailsContact">Phone: {{place.phone}}</div>
+        <div class="detailsHoursOfOperation">{{place.hours}}</div>
         <div class="detailsHappyHours">Happy Hours: 4-7</div>
-        <a href="http://baystreetbiergarten.com/" class="detailsWebsiteLink">Visit the Website</a>
+        <a ng-src="{{place.website}}" class="detailsWebsiteLink">Visit the Website</a>
     </div>
   </div>
   <div class="reviewsContainer">

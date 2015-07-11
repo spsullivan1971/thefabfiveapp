@@ -9,7 +9,7 @@ angular.module('places', [
 .config(function($routeProvider) {
   $routeProvider
     .when('/places', {
-      templateUrl: 'places/views/location.html',
+      templateUrl: 'places/views/list.html',
       controller: 'PlacesController'
     })
     .when('/places/:placeId', {
