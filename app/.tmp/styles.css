@@ -136,7 +136,6 @@ a:hover {
     }
   } */
 body {
-
   background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../Images/American-Flag-in-the-Sun.jpg") no-repeat no-repeat fixed;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../Images/American-Flag-in-the-Sun.jpg") no-repeat no-repeat fixed;
   background-size: 100% 800px;
@@ -546,10 +545,8 @@ a {
   -webkit-transition: .5s;
           transition: .5s;
   border-radius: 5px;
-
   font-size: 2vmax;
   margin: 1%; }
-
 
 .details:hover {
   color: #AC0000;
