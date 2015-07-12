@@ -26,6 +26,7 @@
 
   <ng-include src="'home/views/navbar.html'"></ng-include>
 
+
   <div ng-view class="fadeZoom"></div>
 //   <!-- <script src='//maps.google.com/maps/api/js?sensor=false'></script>
 //
@@ -50,18 +51,19 @@
 
   <!-- Application Code -->
   <!-- inject:js -->
+  <script src="auth/login/video.js"></script>
   <script src="auth/auth.module.js"></script>
   <script src="auth/directives/passwordStrength.js"></script>
   <script src="auth/directives/passwordMatch.js"></script>
   <script src="profile/profile.module.js"></script>
   <script src="profile/profile.controller.js"></script>
   <script src="profile/profile.accountService.js"></script>
-  <script src="posts/posts.module.js"></script>
-  <script src="posts/posts.postService.js"></script>
-  <script src="posts/posts.controller.js"></script>
   <script src="places/places.module.js"></script>
   <script src="places/places.service.js"></script>
   <script src="places/places.controller.js"></script>
+  <script src="posts/posts.module.js"></script>
+  <script src="posts/posts.postService.js"></script>
+  <script src="posts/posts.controller.js"></script>
   <script src="app.module.js"></script>
   <script src="home/navbar.js"></script>
   <script src="favorites/favorites.module.js"></script>

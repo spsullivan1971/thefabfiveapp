@@ -4,6 +4,97 @@
 @font-face {
   font-family: BoldFont;
   src: url("../fonts/aleo/Aleo-Bold.otf"); }
+body {
+  margin: 0;
+  background: #000; }
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  background: url("..auth/images/Bulb-Tokyo-Night.jpg") no-repeat;
+  background-size: cover;
+  -webkit-transition: 1s opacity;
+          transition: 1s opacity; }
+
+.stopfade {
+  opacity: .5; }
+
+#bars {
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight: 100;
+  background: rgba(255, 54, 54, 0.5);
+  border-radius: 5px;
+  color: white;
+  padding: 2rem;
+  /*width: 33%;*/
+  margin: 2rem;
+  margin-top: 3rem;
+  float: right;
+  font-size: 1.2rem; }
+
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem; }
+
+#bars button {
+  display: block;
+  width: 50%;
+  padding: .4rem;
+  border: none;
+  margin: 1rem auto;
+  font-size: 1rem;
+  background: rgba(0, 66, 118, 0.7);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: .3s background;
+          transition: .3s background; }
+
+#bars button:hover {
+  background: rgba(0, 0, 0, 0.7); }
+
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: .5rem;
+  -webkit-transition: .6s background;
+          transition: .6s background; }
+
+a:hover {
+  background: rgba(0, 0, 0, 0.9); }
+
+@-ms-viewport {
+  width: device-width;
+  zoom: 1; }
+
+@-o-viewport {
+  width: device-width;
+  zoom: 1; }
+
+@viewport {
+  width: device-width;
+  zoom: 1; }
+@media screen and (max-width: 500px) {
+  div {
+    width: 33%; } }
+@media screen and (max-device-width: 800px) {
+  html {
+    background: url(../auth/images/Bulb-Tokyo-Night.jpg) #000 no-repeat center center fixed; }
+
+  #bgvid {
+    display: none; } }
 .beerpin {
   width: 70px;
   height: 70px;
