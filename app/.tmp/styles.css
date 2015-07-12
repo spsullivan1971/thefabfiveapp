@@ -109,7 +109,7 @@ a:hover {
   color: #333333; }
 
 #headerLinks {
-  width: 50%;
+  width: 40%;
   height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -121,8 +121,9 @@ a:hover {
           justify-content: center; }
 
 body {
-  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../Images/American-Flag-in-the-Sun.jpg") no-repeat no-repeat fixed;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../Images/American-Flag-in-the-Sun.jpg") no-repeat no-repeat fixed;
+
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../Images/American-Flag-in-the-Sun.jpg") no-repeat no-repeat fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../Images/American-Flag-in-the-Sun.jpg") no-repeat no-repeat fixed;
   background-size: 100% 800px;
   width: 100%; }
 
@@ -132,6 +133,15 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   /* color: #000; */ }
+
+.eagleStare {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%; }
 
 .text-muted {
   color: #FFFFFF; }
@@ -153,13 +163,13 @@ a {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
+  height: auto;
   font-family: ScriptFont; }
 
 .navbar-header {
   padding-left: 15px;
   background-color: #002566;
-  width: 30%;
+  width: 35%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -191,9 +201,11 @@ a {
   background-color: #AC0000; }
 
 .navbar-default .navbar-nav > li > a {
-  color: #333333; }
+  color: #333333;
+  text-shadow: 1px 1px 1px white; }
   .navbar-default .navbar-nav > li > a:hover {
     color: #FFFFFF;
+    text-shadow: 1px 1px 1px #333333;
     -webkit-transition: ease .25s;
             transition: ease .25s; }
 
@@ -204,6 +216,9 @@ a {
   /* padding: 15px; */
   color: #333333; }
 
+#username {
+  font-size: 1vmax; }
+
 .navbar-default {
   color: #333333; }
 
@@ -212,7 +227,7 @@ a {
   margin: 3%; }
 
 .navbar-default .navbar-brand:hover {
-  color: #AC0000;
+  color: #657FAD;
   background-color: #fff; }
 
 .brandWrapper {
@@ -250,9 +265,10 @@ a {
             transition: 0.25s all;
     float: none;
     padding: 0;
-    font-size: 2vmax;
+    font-size: 3vmax;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    line-height: 33px; }
 
 .panel {
   border-color: #cfd9D7;
@@ -385,6 +401,32 @@ a {
   margin-right: 5px; }
 
 /*********************
+  * Stripes page
+  *********************/
+.profileStats {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 100%;
+  height: 150px;
+  margin: 2%;
+  background-color: #002566; }
+  .profileStats .declaration {
+    width: 100%;
+    font-size: 3vmax;
+    font-family: ScriptFont;
+    color: #FFFFFF;
+    text-align: center; }
+
+/*********************
   * places page
   *********************/
 .place {
@@ -483,7 +525,10 @@ a {
   -webkit-transition: .5s;
           transition: .5s;
   border-radius: 5px;
-  font-size: 2vmax; }
+
+  font-size: 2vmax;
+  margin: 1%; }
+
 
 .details:hover {
   color: #AC0000;
@@ -531,7 +576,9 @@ a {
       -ms-flex-align: center;
           align-items: center; }
 
-.placeContainer img {
+.listImg {
+  background: url("../Images/beer-icons-pack-free-vector.jpg");
+  background-size: 430px;
   height: 150px;
   width: 150px;
   border-radius: 5px;
@@ -586,6 +633,7 @@ a {
 
 .detailsInfo {
   margin-bottom: 30px;
+  width: 80%;
   vertical-align: top;
   font-size: 30px;
   display: inline-block;
@@ -601,6 +649,7 @@ a {
   color: #AC0000; }
 
 .backToPlaces {
+  display: inline-block;
   float: right;
   margin-right: 50px;
   margin-top: 20px;
@@ -637,7 +686,8 @@ a {
   border-top: 2px solid;
   border-color: #AC0000;
   width: 100%;
-  border-style: groove; }
+  border-style: groove;
+  text-align: center; }
 
 .individualReview {
   background-color: white;
@@ -790,4 +840,59 @@ textarea {
   50% {
     opacity: 1; } }
 .angular-google-map-container {
-  height: 400px; }
+  height: 400px;
+  width: 80%;
+  margin-left: 10%; }
+
+.homepage {
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Images/oldpaperbackground.gif") no-repeat no-repeat;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Images/oldpaperbackground.gif") no-repeat no-repeat;
+  background-size: 100%;
+  border: 2px solid;
+  border-color: #AC0000;
+  width: 90%;
+  border-style: groove;
+  text-align: center;
+  border-radius: 5px;
+  /* display: flex;
+  align-items: center;
+  flex-wrap: wrap; */
+  margin-left: auto;
+  margin-right: auto;
+  font-family: ScriptFont;
+  color: white; }
+  .homepage .titleHeartWrapper {
+    width: 50%;
+    text-align: center; }
+    .homepage .titleHeartWrapper #placeTitle {
+      width: 100%;
+      font-family: ScriptFont;
+      text-align: center;
+      margin: 2%;
+      font-size: 3.5vmax; }
+
+#homeTitle {
+  color: white;
+  font-family: ScriptFont; }
+
+.containTitle {
+  text-align: center; }
+
+.contain {
+  font-family: ScriptFont; }
+
+span {
+  font-size: 2em;
+  color: white;
+  font-family: ScriptFont; }
+
+#searchBoxParent {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: Serif;
+  color: black; }
+
+.pac-container * {
+  color: black;
+  font-family: Serif; }

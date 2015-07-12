@@ -1,17 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">Home Page</div>
@@ -33,3 +20,49 @@
     </div>
   </div>
 </div>
+-->
+<script type="text/ng-template" id="searchbox.tpl.html">
+    <input type="text" placeholder="Search" size="50" style="font-size: 16px; color: black; font-family: Times; ">
+</script>
+
+
+<div ng-controller="PlacesController">
+
+<div class="containTitle">
+<h1 id = "homeTitle">Welcome to Bars and Stripes!</h1>
+<span>To get started, enter a location below:</span>
+</div>
+
+
+
+<div id="searchBoxParent"></div>
+
+<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true">
+    <ui-gmap-search-box template="searchbox.template" events="searchbox.events" parentdiv="searchbox.parentdiv"></ui-gmap-search-box>
+    <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+</ui-gmap-google-map>
+<div id="searchBoxParent"></div>
+<div class="contain">
+  <!-- <input ng-model="searchAny" class="searchBox" placeholder="Search">
+    <div ng-repeat="filter:searchAny">
+    </div> -->
+<!--   <div class="places"> -->
+  <article class="place" ng-repeat="place in places"  data-id="{{place.id}}">
+        <div class="individualPlaceList">
+          <div class="imageTitleWrapper">
+          <div class="placeContainer">
+        <!--       <img ng-src="" alt="" /> -->
+            <div class="titleHeartWrapper">
+              <a id ="placeTitle" class="individualPlace" href="#/places/detail/{{place.id}}">{{place.name}}</a>
+              <div class="addToFavorites" ng-model="place" ng-click="addToFavorites(place)" ng-controller="FavoritesController">Add to &#9825</div>
+            </div>
+          </div>
+          </div>
+        <div class="info">
+          <div class="address">{{place.address}}</div><br>
+          <div class="rating" ng-click="">&#10025 {{place.rating}}</div><br>
+          <a href="#/places/{{place.id}}"><button class="details">Details</button></a>
+        </div>
+      </div>
+    </article>
+  </div>

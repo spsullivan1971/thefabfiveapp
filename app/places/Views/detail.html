@@ -10,14 +10,17 @@
       <p class="individualPlaceDetailTitle">{{place.name}}</p>
         <div class="detailsAddress">{{place.address}}</div>
         <div class="detailsContact">Phone: {{place.phone}}</div>
-        <div class="detailsHoursOfOperation">{{place.hours}}<br /></div>
+        <div class="detailsHoursOfOperation">{{place.hours}}</div>
         <div class="detailsHappyHours">Happy Hours: 4-7</div>
         <a href="{{ place.website }}" class="detailsWebsiteLink">Visit the Website</a>
     </div>
+    <div class=placeDetailContainer>
+
+  </div>
   </div>
   <div class="reviewsContainer">
     <div class="reviews">Reviews</div>
-      <div class="col-md-6">
+
         <div class="barsReviews">Bars and Stripes</div>
         <form class="form">
           <ul data-ng-repeat="comment in comments" class="comments">
@@ -26,18 +29,18 @@
               {{updateProfile.displayName}}
             </li>
           </ul>
-          <textarea data-ng-model="comment.content" name="reviewsForm" rows="5" cols="95" placeholder=" What'd you think?"></textarea>
+          <textarea data-ng-model="comment.content" name="reviewsForm" rows="5" cols="95" placeholder=" What'd you think?"></textarea><br>
           <button class="submit" data-ng-click="createComment(comment.content)">Submit</button>
         </form>
-        </div>
-      <div class="col-md-6">
-        <div class="allReviews">Everyone</div>
 
-        <div class="individualReview">
-          <span></span>
-              <br>-Kels
-            <p>&#10025 3.4</p>
-        </div>
-      </div>
+<!--       <div class="col-md-6">
+  <div class="allReviews">Everyone</div>
+
+  <div class="individualReview">
+    <span></span>
+        <br>-Kels
+      <p>&#10025 3.4</p>
+  </div>
+</div> -->
   </div>
 </div>

@@ -1,25 +1,61 @@
-<section class="container-fluid">
-  <div class="likesWrapper" ng-repeat="item in items">
-    <aside class="imageAside">
-      <div class="upPhotoInfoWrapper">
-        <h4><i class="fa fa-heart"></i></h4>
-        <h4>Views: {{item.views}}</h4>
-      </div>
-      <div class="imgWrapper">
-        <img src="{{item.Images[0].url_170x135}}" alt="">
-        <!-- <div class="imgFooterWrapper">
-          <img src="{{item.Images[i].url_75x75}}" alt="" class="footerImg" ng-repeat="Images in items">
+<div class=contain>
+  <div class="individualPlaceDetails" data-id="favorite._id">
+      <a href="#/favorites"><button class="backToPlaces">Back</button></a>
+    <div class="placeDetailContainer">
+  <!--       <img ng-src="http://baystreetbiergarten.com/wp-content/themes/baystreetbiergarten/-/img/logo.png" alt="" /> -->
+        <div class="detailsRating">&#10025 {{favorite.rating}}</div>
+
+    </div>
+    <div class="detailsInfo">
+      <p class="individualPlaceDetailTitle">{{favorite.name}}</p>
+        <div class="detailsAddress">{{favorite.address}}</div>
+        <div class="detailsContact">Phone: {{favorite.phone}}</div>
+        <div class="detailsHoursOfOperation">{{favorite.hours}}<br /></div>
+        <div class="detailsHappyHours">Happy Hours: 4-7</div>
+        <a href="{{ favorite.website }}" class="detailsWebsiteLink">Visit the Website</a>
+    </div>
+  </div>
+  <div class="reviewsContainer">
+    <div class="reviews">Reviews</div>
+      <div class="col-md-6">
+        <div class="barsReviews">Bars and Stripes</div>
+        <form class="form">
+          <ul data-ng-repeat="comment in comments" class="comments">
+            <li class="individualComment">
+              <p>{{comment.comment}}</p>
+              {{updateProfile.displayName}}
+            </li>
+          </ul>
+          <textarea data-ng-model="comment.content" name="reviewsForm" rows="5" cols="95" placeholder=" What'd you think?"></textarea>
+          <button class="submit" data-ng-click="createComment(comment.content)">Submit</button>
+        </form>
+        </div>
+      <div class="col-md-6">
+        <div class="allReviews">Everyone</div>
+
+        <div class="individualReview">
+          <span></span>
+              <br>-Kels
+            <p>&#10025 3.4</p>
+        </div>
+        <!-- <div class="individualReview">
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi ducimus dignissimos debitis possimus sint numquam consequuntur impedit quis,
+            commodi ab reiciendis a illum sapiente obcaecati eaque veritatis consectetur ipsum dicta.</span>
+              <br>-Kels
+            <p>&#10025 3.4</p>
+        </div>
+        <div class="individualReview">
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi ducimus dignissimos debitis possimus sint numquam consequuntur impedit quis,
+            commodi ab reiciendis a illum sapiente obcaecati eaque veritatis consectetur ipsum dicta.</span>
+              <br>-Kels
+            <p>&#10025 3.4</p>
+        </div>
+        <div class="individualReview">
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi ducimus dignissimos debitis possimus sint numquam consequuntur impedit quis,
+            commodi ab reiciendis a illum sapiente obcaecati eaque veritatis consectetur ipsum dicta.</span>
+              <br>-Kels
+            <p>&#10025 3.4</p>
         </div> -->
       </div>
-    </aside>
-    <aside class="infoAside">
-      <div class="infoWrapper">
-        <h2><a href="{{item.url}}">{{item.title}}</a></h2>
-        <h2 class="favPrice">{{item.price | currency}}{{item.currency_code}}</h2>
-        <h4 class="infoMaterials">Materials: {{item.materials.join(', ') }}</h4>
-        <h4 class="infoTags">Tags: {{item.tags.join(', ')}}</h4>
-      </div>
-    </aside>
-    <h4 class="infoDescription">Description: {{item.description}}</h4>
   </div>
-</section>
+</div>

@@ -6,7 +6,7 @@ angular.module('places', [
 
 ])
 
-.config(function($routeProvider) {
+.config(function($routeProvider, uiGmapGoogleMapApiProvider) {
   $routeProvider
     .when('/places', {
       templateUrl: 'places/views/list.html',
@@ -16,7 +16,13 @@ angular.module('places', [
       templateUrl: 'places/views/detail.html',
       controller: 'PlacesController'
     })
-
+    uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyDh3JutHi19Cdas8AyY36-R2Mn9mkMw-YA',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization,places'
+    });
   });
+
+
 
 })();
