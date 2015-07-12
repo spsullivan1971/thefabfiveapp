@@ -9,30 +9,28 @@
     <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
 </ui-gmap-google-map>
 
-
 <div class="contain">
   <!-- <input ng-model="searchAny" class="searchBox" placeholder="Search">
     <div ng-repeat="filter:searchAny">
     </div> -->
 <!--   <div class="places"> -->
-  <article class="place" ng-repeat="place in places" data-id="{{place.id}}">
-      <div class="individualPlaceList">
-
-        <div class="placeContainer">
-            <img ng-src="http://baystreetbiergarten.com/wp-content/themes/baystreetbiergarten/-/img/logo.png" alt="" />
-            <a href="#/favorites" class="addToFavorites" ng-click="addPlace(place)">Add to &#9825</a>
-        </div>
+  <article class="place" ng-repeat="place in places"  data-id="{{place.id}}">
+        <div class="individualPlaceList">
+          <div class="imageTitleWrapper">
+          <div class="placeContainer">
+              <img ng-src="" alt="" />
+            <div class="titleHeartWrapper">
+              <a id ="placeTitle" class="individualPlace" href="#/places/detail/{{place.id}}">{{place.name}}</a>
+              <div class="addToFavorites" ng-model="place" ng-click="addToFavorites(place)" ng-controller="FavoritesController">Add to &#9825</div>
+            </div>
+          </div>
+          </div>
         <div class="info">
-          <a class="individualPlace" href="#/places/{{place.id}}">{{place.name}}</a>
           <div class="address">{{place.address}}</div><br>
-          <div class="rating">&#10025 {{place.rating}}</div><br>
+          <div class="rating" ng-click="">&#10025 {{place.rating}}</div><br>
           <a href="#/places/{{place.id}}"><button class="details">Details</button></a>
         </div>
-            <!-- <div class="favorites" ng-controller="FavoritesController"> -->
-            <!-- </div> -->
       </div>
-
-    <!--     </div> -->
       </div>
     </article>
   </div>

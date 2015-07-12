@@ -2,7 +2,7 @@
   <div class="individualPlaceDetails">
       <a href="#/places"><button class="backToPlaces" ng-click="back">Back</button></a>
     <div class="placeDetailContainer">
-        <img ng-src="http://baystreetbiergarten.com/wp-content/themes/baystreetbiergarten/-/img/logo.png" alt="" />
+  <!--       <img ng-src="http://baystreetbiergarten.com/wp-content/themes/baystreetbiergarten/-/img/logo.png" alt="" /> -->
         <div class="detailsRating">&#10025 {{place.rating}}</div>
         <a href="#/favorites" class="addToDetailsFavorites" ng-click="addPlace(place)">Add to &#9825</a>
     </div>
@@ -10,43 +10,31 @@
       <p class="individualPlaceDetailTitle">{{place.name}}</p>
         <div class="detailsAddress">{{place.address}}</div>
         <div class="detailsContact">Phone: {{place.phone}}</div>
-        <div class="detailsHoursOfOperation">{{place.hours}}</div>
+        <div class="detailsHoursOfOperation">{{place.hours}}<br /></div>
         <div class="detailsHappyHours">Happy Hours: 4-7</div>
-        <a ng-src="{{place.website}}" class="detailsWebsiteLink">Visit the Website</a>
+        <a href="{{ place.website }}" class="detailsWebsiteLink">Visit the Website</a>
     </div>
   </div>
   <div class="reviewsContainer">
     <div class="reviews">Reviews</div>
       <div class="col-md-6">
         <div class="barsReviews">Bars and Stripes</div>
-        <div class="form">
-          <textarea name="reviewsForm" rows="5" cols="95" placeholder=" What'd you think?"></textarea>
-          <input class="submit" type="submit" value="Post">
+        <form class="form">
+          <ul data-ng-repeat="comment in comments" class="comments">
+            <li class="individualComment">
+              <p>{{comment.comment}}</p>
+              {{updateProfile.displayName}}
+            </li>
+          </ul>
+          <textarea data-ng-model="comment.content" name="reviewsForm" rows="5" cols="95" placeholder=" What'd you think?"></textarea>
+          <button class="submit" data-ng-click="createComment(comment.content)">Submit</button>
+        </form>
         </div>
-      </div>
       <div class="col-md-6">
         <div class="allReviews">Everyone</div>
+
         <div class="individualReview">
-          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi ducimus dignissimos debitis possimus sint numquam consequuntur impedit quis,
-            commodi ab reiciendis a illum sapiente obcaecati eaque veritatis consectetur ipsum dicta.</span>
-              <br>-Kels
-            <p>&#10025 3.4</p>
-        </div>
-        <div class="individualReview">
-          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi ducimus dignissimos debitis possimus sint numquam consequuntur impedit quis,
-            commodi ab reiciendis a illum sapiente obcaecati eaque veritatis consectetur ipsum dicta.</span>
-              <br>-Kels
-            <p>&#10025 3.4</p>
-        </div>
-        <div class="individualReview">
-          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi ducimus dignissimos debitis possimus sint numquam consequuntur impedit quis,
-            commodi ab reiciendis a illum sapiente obcaecati eaque veritatis consectetur ipsum dicta.</span>
-              <br>-Kels
-            <p>&#10025 3.4</p>
-        </div>
-        <div class="individualReview">
-          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi ducimus dignissimos debitis possimus sint numquam consequuntur impedit quis,
-            commodi ab reiciendis a illum sapiente obcaecati eaque veritatis consectetur ipsum dicta.</span>
+          <span></span>
               <br>-Kels
             <p>&#10025 3.4</p>
         </div>

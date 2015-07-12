@@ -6,7 +6,7 @@ var long;
 
 
 angular.module('places')
-  .controller('PlacesController', function($scope, $auth, $alert, Account, PlaceService, $routeParams) {
+  .controller('PlacesController', function($scope, $auth, $alert, Account, PlaceService, $routeParams, $sce) {
     $scope.map = {
         "center": {
             "latitude": 32.7833,
@@ -39,7 +39,6 @@ angular.module('places')
             lat = place[0].geometry.location.lat();
             long = place[0].geometry.location.lng();
             if (!place || place == 'undefined' || place.length == 0) {
-                console.log('no place data :(');
                 return;
             }
 
@@ -47,6 +46,13 @@ angular.module('places')
               $scope.places = data;
 
             });
+            
+            if($routeParams.placeId) {
+              PlaceService.getSingleBar($routeParams.placeId).then(function(listing) {
+              console.log(listing);
+              $scope.place = listing;
+              });
+            }
 
             $scope.map = {
                 "center": {
@@ -66,15 +72,29 @@ angular.module('places')
         }
     };
     if($routeParams.placeId) {
-      console.log("i am in routeparams");
     PlaceService.getSingleBar($routeParams.placeId, lat, long).then(function(listing) {
-      console.log(listing);
       $scope.place = listing;
-
+      $scope.reviews = listing.reviews;
+      $scope.trustSrc = function(src) {
+        return $sce.trustAsResourceUrl(src);
+      }
+      console.log($scope.trustSrc(listing.website))
     });
     }
     $scope.searchbox = { template: 'searchbox.tpl.html', events: events };
 
+
+    $scope.createComment = function (newComment) {
+        PlaceService.createComment(newComment);
+    };
+
+    var watchCallback = function () {
+      PlaceService.getComments().success(function (comments) {
+        $scope.comments = comments;
+      });
+    };
+
+    $scope.$on('comment:created', watchCallback);
 
   });
 })();

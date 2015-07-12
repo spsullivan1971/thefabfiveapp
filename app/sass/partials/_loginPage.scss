@@ -29,7 +29,7 @@ video {
   border-radius: 5px;
   color: white;
   padding: 2rem;
-  width: 33%;
+  /*width: 33%;*/
   margin: 2rem;
   margin-top: 3rem;
   float: right;
@@ -73,13 +73,14 @@ a {
 a:hover {
   background: rgba(0, 0, 0, 0.9);
 }
+
 @viewport {
   width: device-width;
   zoom: 1;
 }
 @media screen and (max-width: 500px) {
   div {
-    width: 70%;
+    width: 33%;
   }
 }
 

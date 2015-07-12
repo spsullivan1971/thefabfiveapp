@@ -1,26 +1,24 @@
-<section class="container-fluid">
-  <h1 class="favoritesHeader">Favorites</h1>
-  <div class="favoritesWrapper" ng-repeat="favorite in favorites">
-    <aside class="imageAside">
-      <div class="upPhotoInfoWrapper">
-        <h4><i id="favoritesHeart" class="fa fa-heart"></i></h4>
-        <h4>Views: {{favorite.views}}</h4>
+<div class="contain">
+  <!-- <input ng-model="searchAny" class="searchBox" placeholder="Search">
+    <div ng-repeat="filter:searchAny">
+    </div> -->
+<!--   <div class="places"> -->
+  <article class="place"  data-id="{{place.id}}" ng-repeat="place in favorites">
+        <div class="individualPlaceList">
+          <div class="imageTitleWrapper">
+          <div class="placeContainer">
+            <div class="titleHeartWrapper">
+              <a id ="placeTitle" class="individualPlace" href="#/places/detail/{{place.id}}">{{place.name}}</a>
+            </div>
+          </div>
+          </div>
+        <div class="info">
+          <div class="address">{{place.address}}</div><br>
+          <div class="rating">&#10025 {{place.rating}}</div><br>
+          <a href="#/places/{{place.id}}"><button class="details">Details</button></a>
+        </div>
       </div>
-      <div class="imgWrapper">
-        <img src="{{favorite.Images[0].url_170x135}}" alt="">
-        <!-- <div class="imgFooterWrapper">
-          <img src="{{favorite.Images[i].url_75x75}}" alt="" class="footerImg" ng-repeat="Images in favorites">
-        </div> -->
       </div>
-    </aside>
-    <aside class="infoAside">
-      <div class="infoWrapper">
-        <h2><a href="{{favorite.url}}">{{favorite.title}}</a></h2>
-        <h2 class="favPrice">{{favorite.price | currency}}{{favorite.currency_code}}</h2>
-        <h4 class="infoMaterials">Materials: {{favorite.materials.join(', ') }}</h4>
-        <h4 class="infoTags">Tags: {{favorite.tags.join(', ')}}</h4>
-      </div>
-    </aside>
-    <h4 class="infoDescription">Description: {{favorite.description}}</h4>
+    </article>
   </div>
-</section>
+</div>

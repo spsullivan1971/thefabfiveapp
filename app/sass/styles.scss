@@ -8,7 +8,7 @@ $border: #a3a3a3;
 
 @font-face {
     font-family: ScriptFont;
-    src: url('../fonts/Freebooter-Script/freebooterscript.ttf');
+    src: url('../fonts/lobster-two/LobsterTwo-Italic.otf');
 }
 @font-face {
     font-family: BoldFont;
@@ -37,19 +37,16 @@ $border: #a3a3a3;
   }
 
 html {
-  /* background:  linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('../Images/American-Flag-in-the-Sun.jpg') no-repeat no-repeat;
-  background-size: 100% 800px;
-  position: fixed;
-  width: 100%; */
+
 }
 
 
 body {
-  color: $text;
-  background:  linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('../Images/American-Flag-in-the-Sun.jpg') no-repeat no-repeat;
-  background-size: 100% 800px;
+  background:  linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('../Images/American-Flag-in-the-Sun.jpg') no-repeat no-repeat fixed;
+  background-size:100% 800px;
   width: 100%;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
@@ -314,7 +311,44 @@ a {
 /*********************
   * places page
   *********************/
+.place {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
+.imageTitleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 40%
+}
+  .individualPlaceList {
+    background:  linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/oldpaperbackground.gif') no-repeat no-repeat;
+    background-size: 100%;
+    border: 2px solid;
+    border-color: #AC0000;
+    width: 100%;
+    border-style: groove;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2%;
+    .titleHeartWrapper {
+      width: 50%;
+      text-align: center;
+      #placeTitle {
+        width: 100%;
+        font-family: ScriptFont;
+        text-align: center;
+        margin: 2%;
+        font-size: 3.5vmax;
+
+      }
+    }
+  }
 
 .individualPlaceList {
   background-color: white;
@@ -330,24 +364,21 @@ a {
   display: block;
 }
   .info {
-  margin-top: 100px;
-  margin-left: 40px;
-  vertical-align: top;
-  display: inline-block;
-  width: 60%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .details {
-
-/*     margin-right: 100px; */
+    float: right;
     vertical-align: text-bottom;
-    width: 100px;
-    height: 50px;
+    width: 100%;
     color: white;
     background-color: #AC0000;
     transition: .5s;
     border-radius: 5px;
-    display: inline-block;
+    font-size: 2vmax;
   }
 
   .details:hover {
@@ -357,17 +388,29 @@ a {
     border: none;
   }
 
-  .address, .rating {
+
+
+   .rating {
     color: #002566;
     display: inline-block;
     font-size: 30px;
+    width: 20%;
+    text-align: center;
+  }
 
+  .address {
+    color: #002566;
+    display: inline-block;
+    font-size: 30px;
+    text-align: center;
+    width: 60%;
   }
 
   .addToFavorites {
     color: #002566;
     font-size: 20px;
     display: block;
+    width: 100%;
   }
 
   .addToFavorites:hover {
@@ -376,10 +419,24 @@ a {
   }
 
   .placeContainer {
-
-  display: inline-block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+  .placeContainer img {
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+    margin: 2%;
+  }
+
+  .individualPlace {
+    text-align: center;
+    color: #002566;
+    font-size: 30px;
+  }
 
 /*********************
 * Details page
@@ -392,14 +449,12 @@ a {
   width: 100%;
   border-style: groove;
   border-radius: 5px;
-
 }
 
 .placeDetailContainer {
-margin-left: 20px;
-display: inline-block;
-margin-top: 20px;
-
+  margin-left: 20px;
+  display: inline-block;
+  margin-top: 20px;
 }
 
 
@@ -438,9 +493,8 @@ margin-top: 20px;
 }
 
 .detailsInfo {
-  margin-top: 40px;
-  margin-left: 30px;
-  width: 50%;
+  margin-bottom: 30px;
+
   vertical-align: top;
   font-size: 30px;
   display: inline-block;
@@ -476,6 +530,17 @@ margin-top: 20px;
   background-color: white;
   transition: .4s;
   border: none;
+}
+
+.individualComment {
+  background-color: white;
+  border: 2px solid;
+  border-color: #AC0000;
+  width: 100%;
+  border-style: groove;
+  border-radius: 5px;
+  list-style-type: none;
+  padding: 10px;
 }
 
 /*********************
@@ -527,7 +592,7 @@ textarea {
   border-color: #AC0000;
   background-color: white;
   color: #002566;
-  width: 50px;
+  width: 75px;
 }
 
 /*********************
