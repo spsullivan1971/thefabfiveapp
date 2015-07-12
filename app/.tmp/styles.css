@@ -1,52 +1,100 @@
-
-/*
-Error: Invalid CSS after "...ials/loginPage"": expected "{", was ";"
-        on line 20 of ./app/sass/styles.scss
-
-15:     src: url('../fonts/aleo/Aleo-Bold.otf');
-16: }
-17:
-18: @import "partials/auth";
-19: <<<<<<< HEAD
-20: @import "partials/loginPage";
-21: =======
-22: @import "partials/header";
-23:
-24: @mixin submitButton {
-25:     background-color: $red;
-
-Backtrace:
-./app/sass/styles.scss:20
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:1162:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:1098:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:1093:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:638:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:632:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:657:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:650:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:117:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:42:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/engine.rb:393:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/engine.rb:268:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/exec/sass_scss.rb:415:in `run'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/exec/sass_scss.rb:63:in `process_result'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/exec/base.rb:52:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/exec/base.rb:19:in `parse!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/bin/sass:13:in `<top (required)>'
-/usr/bin/sass:23:in `load'
-/usr/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...ials/loginPage\"\": expected \"{\", was \";\"\A         on line 20 of ./app/sass/styles.scss\A \A 15:     src: url('../fonts/aleo/Aleo-Bold.otf');\A 16: }\A 17: \A 18: @import \"partials/auth\";\A 19: <<<<<<< HEAD\A 20: @import \"partials/loginPage\";\A 21: =======\A 22: @import \"partials/header\";\A 23: \A 24: @mixin submitButton {\A 25:     background-color: $red;"; }
-
 @font-face {
   font-family: ScriptFont;
   src: url("../fonts/Freebooter-Script/freebooterscript.ttf"); }
 @font-face {
   font-family: BoldFont;
   src: url("../fonts/aleo/Aleo-Bold.otf"); }
+body {
+  margin: 0;
+  background: #000; }
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  background: url("..auth/images/Bulb-Tokyo-Night.jpg") no-repeat;
+  background-size: cover;
+  -webkit-transition: 1s opacity;
+          transition: 1s opacity; }
+
+.stopfade {
+  opacity: .5; }
+
+#bars {
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight: 100;
+  background: rgba(255, 54, 54, 0.5);
+  border-radius: 5px;
+  color: white;
+  padding: 2rem;
+  width: 33%;
+  margin: 2rem;
+  margin-top: 3rem;
+  float: right;
+  font-size: 1.2rem; }
+
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem; }
+
+#bars button {
+  display: block;
+  width: 50%;
+  padding: .4rem;
+  border: none;
+  margin: 1rem auto;
+  font-size: 1rem;
+  background: rgba(0, 66, 118, 0.7);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: .3s background;
+          transition: .3s background; }
+
+#bars button:hover {
+  background: rgba(0, 0, 0, 0.7); }
+
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: .5rem;
+  -webkit-transition: .6s background;
+          transition: .6s background; }
+
+a:hover {
+  background: rgba(0, 0, 0, 0.9); }
+
+@-ms-viewport {
+  width: device-width;
+  zoom: 1; }
+
+@-o-viewport {
+  width: device-width;
+  zoom: 1; }
+
+@viewport {
+  width: device-width;
+  zoom: 1; }
+@media screen and (max-width: 500px) {
+  div {
+    width: 70%; } }
+@media screen and (max-device-width: 800px) {
+  html {
+    background: url(../auth/images/Bulb-Tokyo-Night.jpg) #000 no-repeat center center fixed; }
+
+  #bgvid {
+    display: none; } }
 .beerpin {
   width: 70px;
   height: 70px;
