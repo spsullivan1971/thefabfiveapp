@@ -16,9 +16,6 @@ $border: #a3a3a3;
 }
 
 @import "partials/auth";
-
-@import "partials/loginPage";
-
 @import "partials/header";
 /*
 @mixin submitButton {
@@ -39,7 +36,6 @@ $border: #a3a3a3;
 html {
 
 }
-
 
 body {
   background:  linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../Images/American-Flag-in-the-Sun.jpg') no-repeat no-repeat fixed;
