@@ -120,6 +120,21 @@ a:hover {
       -ms-flex-pack: center;
           justify-content: center; }
 
+/*
+@mixin submitButton {
+    background-color: $red;
+    font-size: 3vmax;
+    color: $white;
+    border: 3px solid $border;
+    font-family: ScriptFont;
+    border-radius: 5px;
+    &:hover{
+      border-color: $darkBlue;
+      background-color: $white;
+      color: $red;
+      transition: ease .3s;
+    }
+  } */
 body {
 
   background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../Images/American-Flag-in-the-Sun.jpg") no-repeat no-repeat fixed;
@@ -224,10 +239,12 @@ a {
 
 .navbar-default .navbar-brand {
   color: #333333;
+  text-shadow: 2px 2px 1px #FFFFFF;
   margin: 3%; }
 
 .navbar-default .navbar-brand:hover {
   color: #657FAD;
+  text-shadow: 2px 2px 1px #333333;
   background-color: #fff; }
 
 .brandWrapper {
@@ -424,7 +441,11 @@ a {
     font-size: 3vmax;
     font-family: ScriptFont;
     color: #FFFFFF;
+    text-shadow: 2px 2px 1px #AC0000;
     text-align: center; }
+  .profileStats .barsVisited {
+    font-size: 2.5vmax;
+    text-shadow: 1px 1px 1px black; }
 
 /*********************
   * places page
@@ -896,3 +917,8 @@ span {
 .pac-container * {
   color: black;
   font-family: Serif; }
+
+#locateMe {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px; }

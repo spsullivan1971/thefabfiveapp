@@ -8,7 +8,7 @@ angular.module('places')
     var detailUrl = 'https://maps.googleapis.com/maps/api/place/details/json?reference='
     var photoUrl = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=';
     var getBars = function() {
-
+      console.log('im in getBars');
       return $http.post('/api/collections/placesProxy', {url: url + lat + ',' + long + '&radius=500&types=bar&key=AIzaSyDh3JutHi19Cdas8AyY36-R2Mn9mkMw-YA'}).then(function (data) {
         var listArray = [];
         var listings = JSON.parse(data.data.data);

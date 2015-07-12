@@ -7,9 +7,15 @@ var long;
 
 angular.module('places')
   .controller('PlacesController', function($scope, $auth, $alert, Account, PlaceService, $routeParams, $sce, uiGmapGoogleMapApi) {
+    $scope.getCurrentLocation = function() {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+        changeLocation(position.coords.latitude, position.coords.longitude);
+      });
+    }
 
     uiGmapGoogleMapApi.then(function(map) {
-
       $scope.map = {
           "center": {
               "latitude": 32.7833,
@@ -17,12 +23,9 @@ angular.module('places')
           },
           "zoom": 8
       }; //TODO:  set location based on users current gps location
-
-
-
-
-
       });
+
+
       $scope.marker = {
           id: 0,
           coords: {
@@ -42,6 +45,27 @@ angular.module('places')
               }
           }
       };
+
+      var changeLocation = function(lat, long) {
+
+        PlaceService.getBars(lat, long).then(function(data) {
+          $scope.places = data;
+        });
+        $scope.map = {
+            "center": {
+                "latitude": lat,
+                "longitude": long
+            },
+            "zoom": 18
+        };
+        $scope.marker = {
+            id: 0,
+            coords: {
+                latitude: lat,
+                longitude: long
+            }
+        };
+      }
       var events = {
           places_changed: function (searchBox) {
               var place = searchBox.getPlaces();

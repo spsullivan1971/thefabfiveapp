@@ -30,13 +30,15 @@
 
 <div class="containTitle">
 <h1 id = "homeTitle">Welcome to Bars and Stripes!</h1>
-<span>To get started, enter a location below:</span>
+<span>To get started, enter a location below or use current location:</span>
 </div>
 
 
 
 <div id="searchBoxParent"></div>
-
+<div id="locateMe">
+<button type="button" ng-click="getCurrentLocation()">Use Current Location</button>
+</div>
 <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true">
     <ui-gmap-search-box template="searchbox.template" events="searchbox.events" parentdiv="searchbox.parentdiv"></ui-gmap-search-box>
     <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">

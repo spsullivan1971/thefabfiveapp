@@ -134,11 +134,13 @@ a {
 
 .navbar-default .navbar-brand {
   color: $text;
+  text-shadow: 2px 2px 1px $white;
   margin: 3%;
 }
 
 .navbar-default .navbar-brand:hover {
   color: $mediumBlue;
+  text-shadow: 2px 2px 1px $text;
   background-color: #fff;
 }
 
@@ -338,7 +340,12 @@ a {
     font-size: 3vmax;
     font-family: ScriptFont;
     color: $white;
+    text-shadow: 2px 2px 1px $red;
     text-align: center;
+  }
+  .barsVisited {
+    font-size: 2.5vmax;
+    text-shadow: 1px 1px 1px black;
   }
 }
 
@@ -837,4 +844,10 @@ span {
 .pac-container * {
   color: black;
   font-family: Serif;
+}
+
+#locateMe {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
